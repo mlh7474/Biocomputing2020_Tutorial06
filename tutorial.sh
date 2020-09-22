@@ -1,3 +1,5 @@
+#Usage: bash tutorial.sh file_name
+
 #Part1--selects gender and years experience
 cat $1 | cut -d, -f1,2 | tr "," " " | sort -k1 | sort -k2 -n > output.txt
 
@@ -15,4 +17,5 @@ college=$(cat $1 | cut -d, -f3,4 | egrep "^16" | cut -d, -f2 | awk -F';' '{sum+=
 
 highschool=$(cat $1 | cut -d, -f3,4 | egrep "^12" | cut -d, -f2 | awk -F';' '{sum+=$1; ++n} END {print sum/NR}')
 
+echo "Difference between average wages is: "
 echo "$college - $highschool" | bc
