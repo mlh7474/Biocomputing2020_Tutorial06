@@ -1,5 +1,5 @@
 #task1
-cat $1 | cut -d, -f1,2 | tr "," " " | sort -k1 | sort -k2 > output.txt
+cat $1 | cut -d, -f1,2 | tr "," " " | sort -k1 | sort -k2 -n > output.txt
 
 echo "Highest: "
 cat $1 | cut -d, -f1,2,4 | tr "," " " | sort -k3 -n | tail -n 1
