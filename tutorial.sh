@@ -1,7 +1,7 @@
-#Part1
+#Part1--selects gender and years experience
 cat $1 | cut -d, -f1,2 | tr "," " " | sort -k1 | sort -k2 -n > output.txt
 
-#Part2
+#Part2--finds highest and lowest earners
 echo "Highest: "
 cat $1 | cut -d, -f1,2,4 | tr "," " " | sort -k3 -n | tail -n 1
 echo "Lowest: "
